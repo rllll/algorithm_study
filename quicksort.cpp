@@ -15,7 +15,6 @@ int HoarePartition(int *a, int l, int r)
             i++;
         if (i < j)
             a[j--] = a[i];
-        
     }
     a[i] = p;
     return i;
