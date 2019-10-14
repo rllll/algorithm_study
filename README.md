@@ -40,3 +40,4 @@
     时间效率：O(n^2)
 
 * [快速排序](quicksort.cpp)
+* [动态连接](Seepageproblem.cpp)
