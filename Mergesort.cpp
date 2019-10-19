@@ -1,4 +1,3 @@
-//∫œ≤¢≈≈–Ú
 #include<iostream>
 #include<vector>
 using namespace std;
