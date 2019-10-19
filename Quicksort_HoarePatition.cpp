@@ -1,4 +1,3 @@
-//¿ìËÙÅÅĞò
 #include <iostream>
 using namespace std;
 int HoarePartition(int *a, int l, int r)
