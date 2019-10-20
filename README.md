@@ -117,90 +117,91 @@
 ### 一些杂题
 
 * [Prime Reduction](Prime_Reduction.cpp)
+    <details>
+        <summary>Prime Reduction</summary>
+        
+        Problem Description
 
-    Prime Reduction
+        You may know about the 3n+1 problem. If not, you may look it up on the Internet. Here's a procedure inspired by this problem:
 
-    Problem Description
+        Step 1: Accept a natural number.
 
-    You may know about the 3n+1 problem. If not, you may look it up on the Internet. Here's a procedure inspired by this problem:
+        Step 2: If the number is prime, reverse the order of the digits to get a new number, else divide it by its least prime factor and then reverse the order of the digits of the resultant to get a new number.
 
-    Step 1: Accept a natural number.
+        Step 3: Repeat step 2 until a prime number is obtained that is less than 10 or that when reversed becomes a larger or remains the same prime number.
 
-    Step 2: If the number is prime, reverse the order of the digits to get a new number, else divide it by its least prime factor and then reverse the order of the digits of the resultant to get a new number.
+        Here are some examples for this procedure:
 
-    Step 3: Repeat step 2 until a prime number is obtained that is less than 10 or that when reversed becomes a larger or remains the same prime number.
+        Example A: Input = 1729
 
-    Here are some examples for this procedure:
+        · 1729 is composite (7*13*19) and its least prime factor is 7.
 
-    Example A: Input = 1729
+        · 1729/7 = 247 and hence the new number is 742 (247 reversed).
 
-    · 1729 is composite (7*13*19) and its least prime factor is 7.
+        · 742 is composite and dividing by the least prime factor 2, we have 742/2 = 371 and hence the new number is 173.
 
-    · 1729/7 = 247 and hence the new number is 742 (247 reversed).
+        · 173 is prime and hence the new number is 371 (173 reversed).
 
-    · 742 is composite and dividing by the least prime factor 2, we have 742/2 = 371 and hence the new number is 173.
+        · 371 is composite (7*53) and we have 371/7 = 53 and reversing it, we get the new number 35.
 
-    · 173 is prime and hence the new number is 371 (173 reversed).
+        · 35 is composite with the least prime factor 5; we have 35/5 = 7. Since 7 is prime and is less than 10, the procedure stops at 7 in the 5th step.
 
-    · 371 is composite (7*53) and we have 371/7 = 53 and reversing it, we get the new number 35.
+        The input transforms to the output in 5 steps: 1729 => 742 => 173 => 371 => 35 => 7 Example B: Input = 13 13 is prime and reversing it gives 31, a larger prime. Hence the number of steps here is 0. Example C: Input = 288 Following the rules, we obtain the following series of numbers: 288 => (/2 = 144) 441 => (/3 = 147) 741 => (/3 = 247) 742 => (/2 = 371) 173 => 371 => (/7 = 53) 35 => (/5 = 7) 7 Hence the number of steps is 7.
 
-    · 35 is composite with the least prime factor 5; we have 35/5 = 7. Since 7 is prime and is less than 10, the procedure stops at 7 in the 5th step.
+        Example D: Input = 144 We have 144 => (/2 = 72) 27 => (/3 = 9) 9 (we assume that single digit reversal results in the same digit) => (/3 = 3) 3 Hence the number of steps is 3. Example E: Input = 111 We have 111 => (/3 = 37) 73 => 37 (prime number that when reversed results in the larger prime 73) Hence the number of steps is 2.
 
-    The input transforms to the output in 5 steps: 1729 => 742 => 173 => 371 => 35 => 7 Example B: Input = 13 13 is prime and reversing it gives 31, a larger prime. Hence the number of steps here is 0. Example C: Input = 288 Following the rules, we obtain the following series of numbers: 288 => (/2 = 144) 441 => (/3 = 147) 741 => (/3 = 247) 742 => (/2 = 371) 173 => 371 => (/7 = 53) 35 => (/5 = 7) 7 Hence the number of steps is 7.
+        Example F: Input = 1111 We have 1111 => (/11 = 101) 101 (which is prime that when reversed does not change) Hence the procedure terminates in just 1 step.
 
-    Example D: Input = 144 We have 144 => (/2 = 72) 27 => (/3 = 9) 9 (we assume that single digit reversal results in the same digit) => (/3 = 3) 3 Hence the number of steps is 3. Example E: Input = 111 We have 111 => (/3 = 37) 73 => 37 (prime number that when reversed results in the larger prime 73) Hence the number of steps is 2.
+        Example G: Input = 1234 We have 1234 => 716 => 853 (prime) => 358 => 971 (prime) => 179 (prime that becomes larger when reversed) Hence the number of steps is 5.
 
-    Example F: Input = 1111 We have 1111 => (/11 = 101) 101 (which is prime that when reversed does not change) Hence the procedure terminates in just 1 step.
+        Let's consider all natural numbers in the closed interval between two given numbers [m,n]. If we perform the above transformation procedure on each of the numbers in this interval, it would take different numbers of steps to complete. The largest number of steps could be taken by one or more numbers. Write a program that accepts two numbers m and n (separated by a space) with m < n, n - m < 10000 and n <= 10^9 and outputs the largest number of steps taken while performing the "prime reduction" procedure on each of the natural numbers in the interval [m,n]. The number of steps may be reported as "Large" if it exceeds 1000 for any number(s) in the interval.
 
-    Example G: Input = 1234 We have 1234 => 716 => 853 (prime) => 358 => 971 (prime) => 179 (prime that becomes larger when reversed) Hence the number of steps is 5.
+        Constraints
+        0 < Numbers <= 10 ^ 9
 
-    Let's consider all natural numbers in the closed interval between two given numbers [m,n]. If we perform the above transformation procedure on each of the numbers in this interval, it would take different numbers of steps to complete. The largest number of steps could be taken by one or more numbers. Write a program that accepts two numbers m and n (separated by a space) with m < n, n - m < 10000 and n <= 10^9 and outputs the largest number of steps taken while performing the "prime reduction" procedure on each of the natural numbers in the interval [m,n]. The number of steps may be reported as "Large" if it exceeds 1000 for any number(s) in the interval.
+        Input Format
+        Two space separated integers
 
-    Constraints
-    0 < Numbers <= 10 ^ 9
+        Output
+        The maximum number of steps taken by "prime reduction" procedure for numbers in the input range
 
-    Input Format
-    Two space separated integers
+        Test Case
 
-    Output
-    The maximum number of steps taken by "prime reduction" procedure for numbers in the input range
+        Explanation
+        Example 1
 
-    Test Case
+        Input
 
-    Explanation
-    Example 1
+        1 100
 
-    Input
+        Output
 
-    1 100
+        9
 
-    Output
+        Explanation
 
-    9
+        The maximum number of steps (9) is taken for numbers 29, 58 and 87 in the interval. Hence the output is 9.
 
-    Explanation
+        Example 2
 
-    The maximum number of steps (9) is taken for numbers 29, 58 and 87 in the interval. Hence the output is 9.
+        Input
 
-    Example 2
+        100 500
 
-    Input
+        Output
 
-    100 500
+        13
 
-    Output
+        Explanation
 
-    13
+        The maximum number of steps (13) is taken for number 419 in the interval. Hence the output is 13.
 
-    Explanation
+        题目大意：给定一个自然数，如果这个自然数是质数，那么将各位上的数字倒转；如果不是质数，先将其质因数分解，然后将除以质因数中最小的质数后的数各位上的数倒转。一直重复上面的过程，直到最后的质数小于10或倒转后得到比它大或相等的质数。（就是避免死循环！）最终输出到达最后一步的步数。
 
-    The maximum number of steps (13) is taken for number 419 in the interval. Hence the output is 13.
+        思路：刚开始想这很简单，设计一个倒转函数，设计一个取最小质数的函数，然后模拟一遍，同时记录步数就可以得到答案了。倒转函数先用一个容器装好数的每一位，然后再从头开始乘10加存好的值就可以实现。取最小质数我最初想的是先用埃拉托色尼筛法然后从头比，然而时间和空间复杂度都太大，后来直接采用蛮力法，发现求最小质数总是在很小的范围内可以得到。
 
-    题目大意：给定一个自然数，如果这个自然数是质数，那么将各位上的数字倒转；如果不是质数，先将其质因数分解，然后将除以质因数中最小的质数后的数各位上的数倒转。一直重复上面的过程，直到最后的质数小于10或倒转后得到比它大或相等的质数。（就是避免死循环！）最终输出到达最后一步的步数。
-
-    思路：刚开始想这很简单，设计一个倒转函数，设计一个取最小质数的函数，然后模拟一遍，同时记录步数就可以得到答案了。倒转函数先用一个容器装好数的每一位，然后再从头开始乘10加存好的值就可以实现。取最小质数我最初想的是先用埃拉托色尼筛法然后从头比，然而时间和空间复杂度都太大，后来直接采用蛮力法，发现求最小质数总是在很小的范围内可以得到。
-
-    但是我也遇到了麻烦，就是一直没想通最后死循环怎么跳出。我一开始的理解是不是要将倒转后的数与最开始的数比较，然而发现1729过了111没过，然后我就想到是死循环那里的问题。如果保留上一次的数呢，1729又过不了，因为中间很明显是不符合要求的，比如173->371那里。最后我突然想到，只有当原数和倒转后的数都是质数并且倒转后的数大于或等于原数才能陷入死循环，因此只要加一个原数和倒转后的数都是质数的条件就可以了。
-	
+        但是我也遇到了麻烦，就是一直没想通最后死循环怎么跳出。我一开始的理解是不是要将倒转后的数与最开始的数比较，然而发现1729过了111没过，然后我就想到是死循环那里的问题。如果保留上一次的数呢，1729又过不了，因为中间很明显是不符合要求的，比如173->371那里。最后我突然想到，只有当原数和倒转后的数都是质数并且倒转后的数大于或等于原数才能陷入死循环，因此只要加一个原数和倒转后的数都是质数的条件就可以了。
+        
+    </details>
 		
  	
