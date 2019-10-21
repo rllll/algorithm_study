@@ -117,6 +117,7 @@
 ### 一些杂题
 
 * [Prime Reduction](Prime_Reduction.cpp)
+* [another Prime Reduction](primereduction.cpp)
     <details>
         <summary>Prime Reduction</summary>
         
