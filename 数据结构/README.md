@@ -3,6 +3,8 @@
 ## 目录
 
 * [排序和查找](#sort_and_search)
+    
+    * [堆排序](#Heapsort)
 
 ### <span id="sort_and_seacrch">排序和查找</span>
 
@@ -51,7 +53,7 @@
 
     [另一个版本的快速排序](Quicksort_anotherVersion.cpp)
 
-* [堆排序](Heapsort.cpp)
+* [<span id = "Heapsort">堆排序</span>](Heapsort.cpp)
 
     **算法思想**：构建一个最小（大）堆，排序时每次取树根元素，再将树根和最后一片叶子交换后删掉，最后重新将堆调整成最小（大）堆。
 
