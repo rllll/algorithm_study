@@ -1,6 +1,10 @@
 # 数据结构
 
-### 排序和查找
+## 目录
+
+* [排序和查找](#sort_and_search)
+
+### <span id="sort_and_seacrch">排序和查找</span>
 
 * [选择排序](selectSort.cpp)
 
