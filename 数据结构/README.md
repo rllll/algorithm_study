@@ -16,6 +16,8 @@
     
     * [堆排序](#Heapsort)
 
+    * [一些排序算法的时间比较](#compare)
+
 ### <span id="sort_and_seacrch">排序和查找</span>
 
 * [<span id="SelectSort">选择排序</span>](selectSort.cpp) \[ [目录](#content) \]
@@ -73,6 +75,6 @@
     
     最优输入效率：O(nlogn)
 
-* [排序算法的比较](CompareSort.cpp) \[ [目录](#content) \]
+* [<span id="compare">排序算法的比较</span>](CompareSort.cpp) \[ [目录](#content) \]
      
      程序对插入排序 自顶向和自底向上的归并排序 快速排序 三路划分的快速排序在乱序 基本有序 基本逆序的情况的性能作出比较

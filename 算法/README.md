@@ -2,6 +2,16 @@
 
 ## <span id="content">目录</span>
 
+* [算法](#algorithm)
+
+    * [欧几里得算法](#gcd)
+
+    * [埃拉托色尼筛选法](#SieveOfEratosthens)
+
+* [一些杂题](#jobs)
+
+    * [Prime_Reduction](#Prime_Reduction)
+
 ### <span id="algorithm">算法</span>
 
 * <span id="gcd">欧几里得算法</span> \[ [目录](#content) \]
@@ -12,7 +22,7 @@
 
   欧几里得算法描述：不断重复gcd(m, n)=gcd(n, m mod n)，直至m mod n = 0，因为gcd(m,0)=m，m最终取值也是m和n初值的最大公约数。
 
-* [埃拉托色尼筛选法](SieveOfEratosthenes.cpp)
+* [<span id="SieveOfEratosthens">埃拉托色尼筛选法</span>](SieveOfEratosthenes.cpp) \[ [目录](#content) \]
 
     考虑这样一个问题：如何快速地筛选出不大于给定的数n的所有质数？
 
@@ -23,7 +33,7 @@
     优化：在筛选2的倍数时，我们是依次筛选2×2,2×3,2×4,2×5...进行3时，按照原本的算法，是筛选3×2,3×3,3×4,3×5...可不可以跳过3×2，直接从3×3开始筛呢？答案是肯定的。规律就是从p×p开始筛。因为可以肯定，开始筛p的倍数时，2×p,3×p...(p-1)×p一定在之前的步骤中消去了。例如筛选p=5时，很容易可以发现2×5,3×5已经分别在筛选2的倍数，3的倍数的过程中筛去，剩下的4×5，可以知道在进行2×10的步骤中消去。这个有点隐蔽，其实想想可以发现，4已经是一个合数，也就是可以拆分为更小的两个数2×2相乘，如果只看其中一个数2，就会发现其实还是在筛选2的倍数。
 
 
-* [动态连通性](Seepageproblem.cpp)  
+* [<span id="Seepageproblem">动态连通性</span>](Seepageproblem.cpp) \[ [目录](#content) \]
 
     算法思想：<br/>
         **子问题的提出**：问题的输入是一列整数对，其中每个整数对都表示一种某个类型对象。  
@@ -58,10 +68,10 @@
     **程序流程**：点亮节点-》判断节点是否被点亮-》与其上下左右被点亮的节点合并-》  
     判断是否发生渗透（顶部虚节点与底部虚节点是否相连）    
 
-### 一些杂题
+### <span id="jobs">一些杂题</span> \[ [目录](#content) \]
 
-* [Prime Reduction](Prime_Reduction.cpp)
-* [another Prime Reduction](primereduction.cpp)
+* [<span id ="Prime_Reduction">Prime Reduction</span>](Prime_Reduction.cpp) \[ [目录](#content) \]
+* [another Prime Reduction](primereduction.cpp) \[ [目录](#content) \]
     <details>
         <summary>Prime Reduction</summary>
         
