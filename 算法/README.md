@@ -1,6 +1,10 @@
 # 算法
 
-* 欧几里得算法
+## <span id="content">目录</span>
+
+### <span id="algorithm">算法</span>
+
+* <span id="gcd">欧几里得算法</span> \[ [目录](#content) \]
   * [递归版本](gcd_recursionVersion.cpp)
   * [非递归版本](gcd_norecursionVersion.cpp)
   

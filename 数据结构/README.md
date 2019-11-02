@@ -1,31 +1,41 @@
 # 数据结构
 
-## 目录
+## <span id="content">目录</span>
 
 * [排序和查找](#sort_and_search)
+
+    * [选择排序](#SelectSort)
+
+    * [冒泡排序](#BubbleSort)
+
+    * [插入排序](#InsertSort)
+
+    * [合并排序](#MergeSort)
+
+    * [快速排序](#QuickSort)
     
     * [堆排序](#Heapsort)
 
 ### <span id="sort_and_seacrch">排序和查找</span>
 
-* [选择排序](selectSort.cpp)
+* [<span id="SelectSort">选择排序</span>](selectSort.cpp) \[ [目录](#content) \]
 
     **算法思想**：从数组\[0..n-1\]中选择一个最小的数放在第一个位置，再从剩下的\[1..n-1\]个元素的子数组中选择最小的数放在第二个位置，重复进行n-1步后，算法结束。
 
     时间效率：O(n^2)
 
-* [冒泡排序](BubbleSort.cpp)
+* [<span id="BubbleSort">冒泡排序</span>](BubbleSort.cpp) \[ [目录](#content) \]
 
     **算法思想**：比较数组中相邻的两个元素，如果逆序，则交换它们的位置，重复多次以后，数组中较大的元素总是向着数组末尾“沉”去，数组中较小的元素向首部“浮”去，因此把这种算法叫做“冒泡排序”。
 
     时间效率：O(n^2)
-* [插入排序](InsertSort.cpp)
+* [<span id="InsertSort">插入排序</span>](InsertSort.cpp) \[ [目录](#content) \]
 
     **算法思想**：将数组看成两个子数组，分别是已排序子数组和未排序子数组。初始时，已排序数组中只有第一个元素，未排序数组中是剩下的n-1个元素。依次将未排序数组中的元素插入到已排序数组中合适位置，重复n-1次完成。
 
     时间效率：O(n^2)
 
-* [合并排序](Mergesort.cpp)
+* [<span id="MergeSort">合并排序</span>](Mergesort.cpp) \[ [目录](#content) \]
 
     **算法思想**：将一个数组一分为二，分别对每个子数组递归排序，然后再将两个排好序的子数组合并成一个有序数组。这里采用分而治之的思想，即只要得到所有子问题的解，最终的解可以通过这些子问题的解得到。
 
@@ -35,7 +45,7 @@
     
     最优输入效率：O(nlogn)
 
-* [快速排序](Quicksort_HoarePatition.cpp)
+* [<span id="QuickSort">快速排序</span>](Quicksort_HoarePatition.cpp) \[ [目录](#content) \]
 
     **算法思想**：快速排序的核心是对于数组中的某个元素k，经过合适的操作确定其在最终序列中的位置，通常也把k看成一个键，将比k小的元素放在k的左边，比k大的元素放在k的右边，这样k的最终位置就确定了。之所以把k看成键来对数组进行划分，主要是因为通过这样的处理之后，对于k两边的左右子数组来说，可以进行递归操作，降低时间复杂度。
 
@@ -53,7 +63,7 @@
 
     [另一个版本的快速排序](Quicksort_anotherVersion.cpp)
 
-* [<span id = "Heapsort">堆排序</span>](Heapsort.cpp)
+* [<span id = "Heapsort">堆排序</span>](Heapsort.cpp) \[ [目录](#content) \]
 
     **算法思想**：构建一个最小（大）堆，排序时每次取树根元素，再将树根和最后一片叶子交换后删掉，最后重新将堆调整成最小（大）堆。
 
@@ -63,6 +73,6 @@
     
     最优输入效率：O(nlogn)
 
-* [排序算法的比较](CompareSort.cpp)  
+* [排序算法的比较](CompareSort.cpp) \[ [目录](#content) \]
      
      程序对插入排序 自顶向和自底向上的归并排序 快速排序 三路划分的快速排序在乱序 基本有序 基本逆序的情况的性能作出比较
