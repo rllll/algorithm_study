@@ -16,6 +16,8 @@
     
     * [堆排序](#Heapsort)
 
+    * [计数排序](#CountingSort)
+
     * [一些排序算法的时间比较](#compare)
 
 ### <span id="sort_and_seacrch">排序和查找</span>
@@ -93,6 +95,6 @@
 
     这种计数方法也衍生出一个更加简洁的计数排序写法，在应用上还是后者居多。可以查看[源代码](CountingSort.cpp)。
 
-* [<span id="compare">排序算法的比较</span>](CompareSort.cpp) \[ [目录](#content) \]
+* [<span id="compare">一些排序算法的比较</span>](CompareSort.cpp) \[ [目录](#content) \]
      
      程序对插入排序 自顶向和自底向上的归并排序 快速排序 三路划分的快速排序在乱序 基本有序 基本逆序的情况的性能作出比较
